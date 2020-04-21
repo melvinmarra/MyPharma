@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Client.PrescriptionManager.OverviewActivity">
+
+    <TextView
+        android:id="@+id/overview_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/to"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/overview_tv">
+
+        <TextView
+            android:id="@+id/cityOver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/city"
+            app:layout_constraintStart_toEndOf="@+id/postcodeOver"
+            app:layout_constraintTop_toBottomOf="@+id/streetOver" />
+
+        <TextView
+            android:id="@+id/phoneOver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phone"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_phone"
+            app:layout_constraintStart_toStartOf="@+id/emailOver"
+            app:layout_constraintTop_toTopOf="@+id/tv_phone"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/pharmaName_overview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+
+            android:text="@string/pharma_name"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_pict_overview"
+            app:layout_constraintStart_toEndOf="@+id/iv_pict_overview"
+            app:layout_constraintTop_toTopOf="@+id/iv_pict_overview"
+            app:layout_constraintVertical_bias="0.507" />
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/iv_pict_overview"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="36dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/pharma" />
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/emailPharma"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/iv_pict_overview"
+            app:layout_constraintTop_toBottomOf="@+id/iv_pict_overview" />
+
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/phone"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tv_email"
+            app:layout_constraintTop_toBottomOf="@+id/tv_email" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/place_address"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tv_phone"
+            app:layout_constraintTop_toBottomOf="@+id/tv_phone" />
+
+        <TextView
+            android:id="@+id/emailOver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:text="@string/email"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_email"
+            app:layout_constraintStart_toEndOf="@+id/tv_email"
+            app:layout_constraintTop_toTopOf="@+id/tv_email"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/streetOver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/place_address"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_address"
+            app:layout_constraintStart_toStartOf="@+id/phoneOver"
+            app:layout_constraintTop_toTopOf="@+id/tv_address"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/postcodeOver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/postcode"
+            app:layout_constraintStart_toStartOf="@+id/streetOver"
+            app:layout_constraintTop_toBottomOf="@+id/streetOver" />
+
+        <TextView
+            android:id="@+id/stateOver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/country"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/postcodeOver"
+            app:layout_constraintTop_toBottomOf="@+id/postcodeOver" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+
+        <ImageView
+            android:id="@+id/presOverOne"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView19"
+            app:srcCompat="@drawable/prescription" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/myPres"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/showInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/showinfo"
+            app:layout_constraintBottom_toBottomOf="@+id/presOverOne"
+            app:layout_constraintStart_toEndOf="@+id/presOverOne"
+            app:layout_constraintTop_toTopOf="@+id/presOverOne" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_bottom_overview"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#6E6E6E"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <ImageView
+            android:id="@+id/home_menu_overview"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/home" />
+
+        <ImageView
+            android:id="@+id/location_menu_overview"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/location" />
+
+        <ImageView
+            android:id="@+id/send_menu_overview"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/send_green" />
+
+        <ImageView
+            android:id="@+id/chat_menu_overview"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/chat" />
+
+        <ImageView
+            android:id="@+id/profile_menu_overview"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/profile" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

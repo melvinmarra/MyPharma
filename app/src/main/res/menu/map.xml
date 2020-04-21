@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <item
+            android:id="@+id/action_pharmacy"
+            android:enabled="true"
+            android:icon="@drawable/location"
+            android:title="@string/pharmacyShow"
+            android:iconTint="#09D309"
+            app:showAsAction="ifRoom"/>
+
+
+        <item
+            android:id="@+id/action_hospital"
+            android:enabled="true"
+            android:icon="@drawable/hospital"
+            android:title="@string/hospitalShow"
+            android:iconTint="#E20505"
+            app:showAsAction="ifRoom"/>
+
+</menu>

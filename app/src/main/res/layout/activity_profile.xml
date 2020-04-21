@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".Client.ProfileManager.ProfileActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="false"
+        android:background="#6E6E6E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/camera_iv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@android:drawable/ic_menu_camera"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/menu_bottom_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.004">
+
+        <TextView
+            android:id="@+id/secuProf"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="36dp"
+            android:text="@string/socialProf"
+            android:textColor="#6E6E6E"
+            android:textDirection="ltr"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phoneProf" />
+
+        <TextView
+            android:id="@+id/firstnameProf"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="36dp"
+            android:text="@string/firstName"
+            android:textColor="#6E6E6E"
+            android:textDirection="ltr"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lastnameProf"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="36dp"
+            android:text="@string/lastName"
+            android:textColor="#6E6E6E"
+            android:textDirection="ltr"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstnameProf" />
+
+        <TextView
+            android:id="@+id/dopProf"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="36dp"
+            android:text="@string/dopsimple"
+            android:textColor="#6E6E6E"
+            android:textDirection="ltr"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lastnameProf" />
+
+        <TextView
+            android:id="@+id/emailProf"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="36dp"
+            android:text="@string/email"
+            android:textColor="#6E6E6E"
+            android:textDirection="firstStrongLtr"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dopProf" />
+
+        <TextView
+            android:id="@+id/phoneProf"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="36dp"
+            android:text="@string/phone"
+            android:textColor="#6E6E6E"
+            android:textDirection="ltr"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emailProf" />
+
+        <TextView
+            android:id="@+id/passwordProf"
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="84dp"
+            android:text="@string/password"
+            android:textColor="#6E6E6E"
+            android:textDirection="firstStrongLtr"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secuProf" />
+
+        <ImageView
+            android:id="@+id/iv_email"
+            android:layout_width="32dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/emailProf"
+            app:layout_constraintEnd_toStartOf="@+id/emailProf"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/emailProf"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/email" />
+
+        <ImageView
+            android:id="@+id/iv_fistname"
+            android:layout_width="32dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/firstnameProf"
+            app:layout_constraintEnd_toStartOf="@+id/firstnameProf"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/firstnameProf"
+            app:srcCompat="@drawable/profil_green" />
+
+        <ImageView
+            android:id="@+id/iv_lastname"
+            android:layout_width="32dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/lastnameProf"
+            app:layout_constraintEnd_toStartOf="@+id/lastnameProf"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/lastnameProf"
+            app:srcCompat="@drawable/profil_green" />
+
+        <ImageView
+            android:id="@+id/iv_dob"
+            android:layout_width="32dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/dopProf"
+            app:layout_constraintEnd_toStartOf="@+id/dopProf"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/dopProf"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/date" />
+
+        <ImageView
+            android:id="@+id/iv_phone"
+            android:layout_width="32dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/phoneProf"
+            app:layout_constraintEnd_toStartOf="@+id/phoneProf"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/phoneProf"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/phone" />
+
+        <ImageView
+            android:id="@+id/iv_secu"
+            android:layout_width="32dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/secuProf"
+            app:layout_constraintEnd_toStartOf="@+id/secuProf"
+            app:layout_constraintHorizontal_bias="0.516"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/secuProf"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/card" />
+
+        <ImageView
+            android:id="@+id/iv_mdp"
+            android:layout_width="32dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/passwordProf"
+            app:layout_constraintEnd_toStartOf="@+id/passwordProf"
+            app:layout_constraintHorizontal_bias="0.516"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/passwordProf"
+            app:srcCompat="@drawable/lock" />
+
+        <ImageView
+            android:id="@+id/show_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/passwordProf"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/passwordProf"
+            app:layout_constraintTop_toTopOf="@+id/passwordProf"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/eye" />
+
+        <ImageView
+            android:id="@+id/editEmail_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/emailProf"
+            app:layout_constraintEnd_toStartOf="@+id/iv_email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/emailProf"
+            app:srcCompat="@drawable/edit" />
+
+        <ImageView
+            android:id="@+id/editPhone_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/phoneProf"
+            app:layout_constraintEnd_toStartOf="@+id/iv_phone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/phoneProf"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/edit" />
+
+        <ImageView
+            android:id="@+id/editPassword_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/passwordProf"
+            app:layout_constraintEnd_toStartOf="@+id/iv_mdp"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/passwordProf"
+            app:srcCompat="@drawable/edit" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_bottom_profile"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#6E6E6E"
+        android:orientation="horizontal"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <ImageView
+            android:id="@+id/home_menu_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/home" />
+
+        <ImageView
+            android:id="@+id/location_menu_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/location" />
+
+        <ImageView
+            android:id="@+id/send_menu_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/send" />
+
+        <ImageView
+            android:id="@+id/chat_menu_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/chat" />
+
+        <ImageView
+            android:id="@+id/profile_menu_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/profile_green" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

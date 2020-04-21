@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1080096493539",
+    "firebase_url": "https://mypharmaandroid-9b352.firebaseio.com",
+    "project_id": "mypharmaandroid-9b352",
+    "storage_bucket": "mypharmaandroid-9b352.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1080096493539:android:1e2afa9a84dc45274f9ad6",
+        "android_client_info": {
+          "package_name": "fr.isen.emelian.mypharma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1080096493539-tkl8cgoujhotlheubf44n6oec8d5trle.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCa0cPfXTijio0NWZp3qp6_-gWfVQ6xabc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1080096493539-tkl8cgoujhotlheubf44n6oec8d5trle.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

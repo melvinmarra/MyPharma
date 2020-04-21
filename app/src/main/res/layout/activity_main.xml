@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6E6E6E"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/WelcomeMessage"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.092" />
+
+    <TextView
+        android:id="@+id/proText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/professionnal"
+        android:textColor="@android:color/background_light"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/myPharma_pro"
+        app:layout_constraintStart_toStartOf="@+id/myPharma_pro"
+        app:layout_constraintTop_toBottomOf="@+id/myPharma_pro" />
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/myPharma_client"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="TODO"
+        app:civ_border_width="3dp"
+        app:layout_constraintEnd_toEndOf="@+id/choiceText"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="@+id/choiceText"
+        app:layout_constraintTop_toBottomOf="@+id/choiceText"
+        app:srcCompat="@drawable/my_pharma" />
+
+    <TextView
+        android:id="@+id/clientText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/client"
+        android:textColor="#FCFFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myPharma_client" />
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/myPharma_pro"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="TODO"
+        app:civ_border_width="3dp"
+        app:layout_constraintEnd_toEndOf="@+id/myPharma_client"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/myPharma_client"
+        app:layout_constraintTop_toBottomOf="@+id/clientText"
+        app:srcCompat="@drawable/my_pharma_pro" />
+
+    <TextView
+        android:id="@+id/choiceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/choiceMessage"
+        android:textColor="#FCFFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

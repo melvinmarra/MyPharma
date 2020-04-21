@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Client.PrescriptionManager.SendPrescriptionActivity">
+
+    <LinearLayout
+        android:id="@+id/menu_bottom_send"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#6E6E6E"
+        android:orientation="horizontal"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <ImageView
+            android:id="@+id/home_menu_send"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/home" />
+
+        <ImageView
+            android:id="@+id/location_menu_send"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/location" />
+
+        <ImageView
+            android:id="@+id/send_menu_send"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/send_green" />
+
+        <ImageView
+            android:id="@+id/chat_menu_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/chat" />
+
+        <ImageView
+            android:id="@+id/profile_menu_send"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/profile" />
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/send_prescription"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/presManatxt"
+        app:srcCompat="@drawable/send_green" />
+
+
+    <TextView
+        android:id="@+id/presManatxt"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#6E6E6E"
+        android:gravity="center"
+        android:text="@string/presMana"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/history_of_prescription_tv"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/histoPres"
+        app:layout_constraintEnd_toEndOf="@+id/history_of_prescription"
+        app:layout_constraintStart_toStartOf="@+id/history_of_prescription"
+        app:layout_constraintTop_toBottomOf="@+id/history_of_prescription" />
+
+    <ImageView
+        android:id="@+id/pickout_iv"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="68dp"
+        app:layout_constraintBottom_toBottomOf="@+id/history_of_prescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/history_of_prescription"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/pick" />
+
+    <TextView
+        android:id="@+id/send_prescription_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/sendPres"
+        app:layout_constraintEnd_toEndOf="@+id/send_prescription"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="@+id/send_prescription"
+        app:layout_constraintTop_toBottomOf="@+id/send_prescription" />
+
+    <ImageView
+        android:id="@+id/history_of_prescription"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/send_prescription_tv"
+        app:srcCompat="@drawable/history_green" />
+
+    <TextView
+        android:id="@+id/pickout_tv"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/pick"
+        app:layout_constraintEnd_toEndOf="@+id/pickout_iv"
+        app:layout_constraintStart_toStartOf="@+id/pickout_iv"
+        app:layout_constraintTop_toBottomOf="@+id/pickout_iv" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
