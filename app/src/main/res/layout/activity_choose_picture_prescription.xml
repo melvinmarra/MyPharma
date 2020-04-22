@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#6E6E6E"
     tools:context=".Client.PrescriptionManager.ChoosePicturePrescription">
 
     <LinearLayout
@@ -76,6 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:text="@string/first"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/firstOrdo_iv"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="@+id/firstOrdo_iv"
@@ -103,19 +105,19 @@
         android:id="@+id/nextStep_arrow"
         android:layout_width="83dp"
         android:layout_height="74dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/menu_bottom_send_pict"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/next_green" />
+        app:srcCompat="@drawable/next" />
 
     <TextView
         android:id="@+id/nextStep_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sendP"
-        android:textColor="#67A365"
+        android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/nextStep_arrow"
@@ -127,10 +129,10 @@
         android:id="@+id/buttonURL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="#78B078"
+        android:layout_marginTop="30dp"
+        android:background="#BABABA"
         android:text="@string/urlOrdo"
-        android:textColor="#FFFFFF"
+        android:textColor="#6E6E6E"
         app:layout_constraintEnd_toEndOf="@+id/firstOrdo_iv"
         app:layout_constraintStart_toStartOf="@+id/firstOrdo_iv"
         app:layout_constraintTop_toBottomOf="@+id/validordo_one" />

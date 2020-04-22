@@ -5,15 +5,15 @@
     android:id="@+id/fragmentContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CCCCCC"
+    android:background="#6E6E6E"
     tools:context=".Client.HomeActivity">
 
 
     <LinearLayout
         android:id="@+id/linearLayout7"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="#6A6A6A"
+        android:layout_height="130dp"
+        android:background="#6E6E6E"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -23,6 +23,7 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
             android:layout_marginLeft="20dp"
             android:background="@android:drawable/ic_menu_camera"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -154,7 +155,6 @@
         android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:background="#BABABA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -165,7 +165,7 @@
             android:id="@+id/pictureLatestPharma"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:layout_marginStart="60dp"
+            android:layout_marginStart="44dp"
             android:layout_marginTop="12dp"
             android:visibility="invisible"
             app:layout_constraintStart_toStartOf="parent"
@@ -199,8 +199,8 @@
 
         <Button
             android:id="@+id/firstLastPres"
-            android:layout_width="50dp"
-            android:layout_height="30dp"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:gravity="center_horizontal"
             android:text="@string/click"
@@ -284,6 +284,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/partner"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/partner_iv"
         app:layout_constraintStart_toStartOf="@+id/partner_iv"
         app:layout_constraintTop_toBottomOf="@+id/partner_iv" />
@@ -294,6 +295,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/contact"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/aboutUs"
         app:layout_constraintStart_toStartOf="@+id/aboutUs"
         app:layout_constraintTop_toBottomOf="@+id/aboutUs" />

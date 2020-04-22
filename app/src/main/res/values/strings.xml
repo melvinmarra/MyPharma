@@ -93,7 +93,14 @@
     <string name="partner">Our partner pharmacies</string>
     <string name="contact">About us</string>
     <string name="cancel">Cancel</string>
-
+    <string name="id">ID :</string>
+    <string name="nfc_tech">NFC Technology</string>
+    <string name="nfc_info">This is your personnal secret nfc card</string>
+    <string name="how_to_use">To pickout your prescription, please, put your phone (with this page ON) against the NFC receptor on the box to open it. </string>
+    <string name="uses_nfc">This card is only working if your prescription is ready and confirm by the pharmacy. It will be reinitialize after any pickout and is usable only for once.</string>
+    <string name="problem">If you have any problem, please, contact our service</string>
+    <string name="ourPhone">Phone : 0612345678</string>
+    <string name="ourEmail">Email : mypharma_app@outlook.fr</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

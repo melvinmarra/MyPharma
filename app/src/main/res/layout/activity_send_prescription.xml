@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#6E6E6E"
     tools:context=".Client.PrescriptionManager.SendPrescriptionActivity">
 
     <LinearLayout
@@ -64,27 +65,12 @@
         android:id="@+id/send_prescription"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/presManatxt"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/send_green" />
-
-
-    <TextView
-        android:id="@+id/presManatxt"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#6E6E6E"
-        android:gravity="center"
-        android:text="@string/presMana"
-        android:textColor="#FFFFFF"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/history_of_prescription_tv"
@@ -93,6 +79,7 @@
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/histoPres"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/history_of_prescription"
         app:layout_constraintStart_toStartOf="@+id/history_of_prescription"
         app:layout_constraintTop_toBottomOf="@+id/history_of_prescription" />
@@ -114,6 +101,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="@string/sendPres"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/send_prescription"
         app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="@+id/send_prescription"
@@ -136,6 +124,7 @@
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/pick"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/pickout_iv"
         app:layout_constraintStart_toStartOf="@+id/pickout_iv"
         app:layout_constraintTop_toBottomOf="@+id/pickout_iv" />

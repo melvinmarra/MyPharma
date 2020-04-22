@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#6E6E6E"
     tools:context=".Client.PrescriptionManager.OverviewActivity">
 
     <TextView
         android:id="@+id/overview_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="@string/to"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,6 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="@string/city"
+            android:textColor="#FFFFFF"
             app:layout_constraintStart_toEndOf="@+id/postcodeOver"
             app:layout_constraintTop_toBottomOf="@+id/streetOver" />
 
@@ -42,6 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/phone"
+            android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="@+id/tv_phone"
             app:layout_constraintStart_toStartOf="@+id/emailOver"
             app:layout_constraintTop_toTopOf="@+id/tv_phone"
@@ -54,6 +58,7 @@
             android:layout_marginStart="24dp"
 
             android:text="@string/pharma_name"
+            android:textColor="#FFFFFF"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/iv_pict_overview"
             app:layout_constraintStart_toEndOf="@+id/iv_pict_overview"
@@ -75,6 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:text="@string/emailPharma"
+            android:textColor="#FFFFFF"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/iv_pict_overview"
             app:layout_constraintTop_toBottomOf="@+id/iv_pict_overview" />
@@ -85,6 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/phone"
+            android:textColor="#FFFFFF"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/tv_email"
             app:layout_constraintTop_toBottomOf="@+id/tv_email" />
@@ -95,6 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/place_address"
+            android:textColor="#FFFFFF"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/tv_phone"
             app:layout_constraintTop_toBottomOf="@+id/tv_phone" />
@@ -105,6 +113,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
             android:text="@string/email"
+            android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="@+id/tv_email"
             app:layout_constraintStart_toEndOf="@+id/tv_email"
             app:layout_constraintTop_toTopOf="@+id/tv_email"
@@ -115,6 +124,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/place_address"
+            android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="@+id/tv_address"
             app:layout_constraintStart_toStartOf="@+id/phoneOver"
             app:layout_constraintTop_toTopOf="@+id/tv_address"
@@ -125,6 +135,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/postcode"
+            android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/streetOver"
             app:layout_constraintTop_toBottomOf="@+id/streetOver" />
 
@@ -133,6 +144,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/country"
+            android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/postcodeOver"
             app:layout_constraintTop_toBottomOf="@+id/postcodeOver" />
@@ -164,6 +176,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/myPres"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

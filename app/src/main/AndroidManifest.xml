@@ -39,6 +39,7 @@
         <activity android:name=".Pro.ProfileManager.LoginProActivity" />
         <activity android:name=".Client.PrescriptionManager.SendPrescriptionActivity" />
         <activity android:name=".Client.ProfileManager.PhotoChooseActivity" />
+        <activity android:name=".NFC.NFCActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
