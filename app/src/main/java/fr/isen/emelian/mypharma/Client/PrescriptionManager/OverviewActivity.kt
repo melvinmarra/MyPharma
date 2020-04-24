@@ -59,7 +59,6 @@ class OverviewActivity : AppCompatActivity() {
             valueListenerAdapter {
                 mUser = it.asUser()!!
 
-                val test_two = mUser.ordoUrl_two
                 val builder = androidx.appcompat.app.AlertDialog.Builder(this)
 
                 Picasso.get()

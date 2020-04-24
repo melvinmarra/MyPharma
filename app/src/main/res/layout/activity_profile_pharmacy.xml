@@ -6,36 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Pro.ProfileManager.ProfilePharmacy">
 
-    <Button
-        android:id="@+id/refreshProPharma"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#327BFF"
-        android:text="@string/refresh"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/allowedUser" />
-
-    <TextView
-        android:id="@+id/countryTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/country"
-        app:layout_constraintStart_toStartOf="@+id/city_tv"
-        app:layout_constraintTop_toBottomOf="@+id/city_tv" />
-
-    <TextView
-        android:id="@+id/address_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/place_address"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/addressTV"
-        app:layout_constraintStart_toStartOf="@+id/phone_tv"
-        app:layout_constraintTop_toTopOf="@+id/addressTV" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -64,6 +34,14 @@
             app:srcCompat="@drawable/new_folder" />
 
         <ImageView
+            android:id="@+id/pharma_info_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/chat" />
+
+        <ImageView
             android:id="@+id/pharma_info_select"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
@@ -72,207 +50,232 @@
             app:srcCompat="@drawable/profile_pharma_blue" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/nameTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="52dp"
-        android:text="@string/place_name"
-        app:layout_constraintStart_toEndOf="@+id/name_tv"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
-
-    <TextView
-        android:id="@+id/emailTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="@string/emailPharma"
-        app:layout_constraintStart_toStartOf="@+id/nameTV"
-        app:layout_constraintTop_toBottomOf="@+id/nameTV" />
-
-    <TextView
-        android:id="@+id/phoneTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="@string/phone"
-        app:layout_constraintStart_toStartOf="@+id/emailTV"
-        app:layout_constraintTop_toBottomOf="@+id/emailTV" />
-
-    <TextView
-        android:id="@+id/addressTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="@string/place_address"
-        app:layout_constraintStart_toStartOf="@+id/phoneTV"
-        app:layout_constraintTop_toBottomOf="@+id/phoneTV" />
-
-    <TextView
-        android:id="@+id/name_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="@string/place_name"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/nameTV"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/nameTV"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/email_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/email"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/emailTV"
-        app:layout_constraintStart_toStartOf="@+id/name_tv"
-        app:layout_constraintTop_toTopOf="@+id/emailTV" />
-
-    <TextView
-        android:id="@+id/phone_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/phone"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/phoneTV"
-        app:layout_constraintStart_toStartOf="@+id/email_tv"
-        app:layout_constraintTop_toTopOf="@+id/phoneTV" />
-
-    <ImageView
-        android:id="@+id/edit_iv_phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/phoneTV"
-        app:layout_constraintEnd_toEndOf="@+id/edit_iv_address"
-        app:layout_constraintTop_toTopOf="@+id/phoneTV"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/edit_blue" />
-
-    <ImageView
-        android:id="@+id/edit_iv_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/addressTV"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/addressTV"
-        app:layout_constraintTop_toTopOf="@+id/addressTV"
-        app:srcCompat="@drawable/edit_blue" />
-
-    <TextView
-        android:id="@+id/postcode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/postcode"
-        app:layout_constraintStart_toStartOf="@+id/addressTV"
-        app:layout_constraintTop_toBottomOf="@+id/addressTV" />
-
-    <TextView
-        android:id="@+id/city_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/city"
-        app:layout_constraintStart_toStartOf="@+id/postcode"
-        app:layout_constraintTop_toBottomOf="@+id/postcode" />
-
-    <ImageView
-        android:id="@+id/edit_iv_postcode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/postcode"
-        app:layout_constraintEnd_toEndOf="@+id/edit_iv_address"
-        app:layout_constraintTop_toTopOf="@+id/postcode"
-        app:srcCompat="@drawable/edit_blue" />
-
-    <ImageView
-        android:id="@+id/edit_iv_city"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/city_tv"
-        app:layout_constraintEnd_toEndOf="@+id/edit_iv_postcode"
-        app:layout_constraintTop_toTopOf="@+id/city_tv"
-        app:srcCompat="@drawable/edit_blue" />
-
-    <ImageView
-        android:id="@+id/edit_iv_country"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/countryTV"
-        app:layout_constraintEnd_toEndOf="@+id/edit_iv_city"
-        app:layout_constraintTop_toTopOf="@+id/countryTV"
-        app:srcCompat="@drawable/edit_blue" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
+        android:background="#6E6E6E"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <ImageView
-            android:id="@+id/imageView13"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#6E6E6E"
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/picture_pharma"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             app:srcCompat="@drawable/pharma" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/allowedUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/allowed"
-        android:visibility="visible"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="135dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countryTV" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
-    <ImageView
-        android:id="@+id/seeUserAllowed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/allowedUser"
-        app:layout_constraintStart_toStartOf="@+id/edit_iv_country"
-        app:layout_constraintTop_toTopOf="@+id/allowedUser"
-        app:srcCompat="@drawable/profil_green" />
+        <TextView
+            android:id="@+id/nameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:text="@string/place_name"
+            app:layout_constraintStart_toEndOf="@+id/name_tv"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/firstuser_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/user_one"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/seconduser_tv"
-        app:layout_constraintEnd_toStartOf="@+id/thirduser_tv"
-        app:layout_constraintStart_toEndOf="@+id/seconduser_tv"
-        app:layout_constraintTop_toTopOf="@+id/seconduser_tv" />
+        <TextView
+            android:id="@+id/emailTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/emailPharma"
+            app:layout_constraintStart_toStartOf="@+id/nameTV"
+            app:layout_constraintTop_toBottomOf="@+id/nameTV" />
 
-    <TextView
-        android:id="@+id/seconduser_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="@string/user_two"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="@+id/allowedUser"
-        app:layout_constraintTop_toBottomOf="@+id/countryTV" />
+        <TextView
+            android:id="@+id/phoneTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/phone"
+            app:layout_constraintStart_toStartOf="@+id/emailTV"
+            app:layout_constraintTop_toBottomOf="@+id/emailTV" />
 
-    <TextView
-        android:id="@+id/thirduser_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/user_three"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/allowedUser"
-        app:layout_constraintEnd_toEndOf="@+id/allowedUser"
-        app:layout_constraintTop_toTopOf="@+id/allowedUser" />
+        <TextView
+            android:id="@+id/addressTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/place_address"
+            app:layout_constraintStart_toStartOf="@+id/phoneTV"
+            app:layout_constraintTop_toBottomOf="@+id/phoneTV" />
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/place_name"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/nameTV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/nameTV"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/email_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/emailTV"
+            app:layout_constraintStart_toStartOf="@+id/name_tv"
+            app:layout_constraintTop_toTopOf="@+id/emailTV" />
+
+        <TextView
+            android:id="@+id/phone_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phone"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/phoneTV"
+            app:layout_constraintStart_toStartOf="@+id/email_tv"
+            app:layout_constraintTop_toTopOf="@+id/phoneTV" />
+
+        <ImageView
+            android:id="@+id/edit_iv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/phoneTV"
+            app:layout_constraintEnd_toEndOf="@+id/edit_iv_address"
+            app:layout_constraintTop_toTopOf="@+id/phoneTV"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/edit_blue" />
+
+        <ImageView
+            android:id="@+id/edit_iv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/addressTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/addressTV"
+            app:layout_constraintTop_toTopOf="@+id/addressTV"
+            app:srcCompat="@drawable/edit_blue" />
+
+        <TextView
+            android:id="@+id/postcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/postcode"
+            app:layout_constraintStart_toStartOf="@+id/addressTV"
+            app:layout_constraintTop_toBottomOf="@+id/addressTV" />
+
+        <TextView
+            android:id="@+id/city_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/city"
+            app:layout_constraintStart_toStartOf="@+id/postcode"
+            app:layout_constraintTop_toBottomOf="@+id/postcode" />
+
+        <ImageView
+            android:id="@+id/edit_iv_postcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/postcode"
+            app:layout_constraintEnd_toEndOf="@+id/edit_iv_address"
+            app:layout_constraintTop_toTopOf="@+id/postcode"
+            app:srcCompat="@drawable/edit_blue" />
+
+        <ImageView
+            android:id="@+id/edit_iv_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/city_tv"
+            app:layout_constraintEnd_toEndOf="@+id/edit_iv_postcode"
+            app:layout_constraintTop_toTopOf="@+id/city_tv"
+            app:srcCompat="@drawable/edit_blue" />
+
+        <ImageView
+            android:id="@+id/edit_iv_country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/countryTV"
+            app:layout_constraintEnd_toEndOf="@+id/edit_iv_city"
+            app:layout_constraintTop_toTopOf="@+id/countryTV"
+            app:srcCompat="@drawable/edit_blue" />
+
+
+        <TextView
+            android:id="@+id/seeUserAllowed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/allowed"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/address_tv"
+            app:layout_constraintTop_toBottomOf="@+id/countryTV" />
+
+        <TextView
+            android:id="@+id/firstuser_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+
+            android:text="@string/user_one"
+            app:layout_constraintBottom_toBottomOf="@+id/seeUserAllowed"
+            app:layout_constraintStart_toEndOf="@+id/seeUserAllowed"
+            app:layout_constraintTop_toTopOf="@+id/seeUserAllowed" />
+
+        <TextView
+            android:id="@+id/seconduser_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/user_two"
+            app:layout_constraintStart_toStartOf="@+id/firstuser_tv"
+            app:layout_constraintTop_toBottomOf="@+id/firstuser_tv" />
+
+        <TextView
+            android:id="@+id/thirduser_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/user_three"
+            app:layout_constraintStart_toStartOf="@+id/seconduser_tv"
+            app:layout_constraintTop_toBottomOf="@+id/seconduser_tv" />
+
+        <TextView
+            android:id="@+id/countryTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/country"
+            app:layout_constraintStart_toStartOf="@+id/city_tv"
+            app:layout_constraintTop_toBottomOf="@+id/city_tv" />
+
+        <TextView
+            android:id="@+id/address_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/place_address"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/addressTV"
+            app:layout_constraintStart_toStartOf="@+id/phone_tv"
+            app:layout_constraintTop_toTopOf="@+id/addressTV" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

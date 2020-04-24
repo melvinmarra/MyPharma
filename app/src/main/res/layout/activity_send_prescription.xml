@@ -72,27 +72,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/send_green" />
 
-    <TextView
-        android:id="@+id/history_of_prescription_tv"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="@string/histoPres"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/history_of_prescription"
-        app:layout_constraintStart_toStartOf="@+id/history_of_prescription"
-        app:layout_constraintTop_toBottomOf="@+id/history_of_prescription" />
-
     <ImageView
         android:id="@+id/pickout_iv"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="68dp"
-        app:layout_constraintBottom_toBottomOf="@+id/history_of_prescription"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/history_of_prescription"
-        app:layout_constraintVertical_bias="1.0"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="@+id/send_prescription"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/send_prescription"
+        app:layout_constraintTop_toBottomOf="@+id/send_prescription_tv"
         app:srcCompat="@drawable/pick" />
 
     <TextView
@@ -106,16 +94,6 @@
         app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="@+id/send_prescription"
         app:layout_constraintTop_toBottomOf="@+id/send_prescription" />
-
-    <ImageView
-        android:id="@+id/history_of_prescription"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/send_prescription_tv"
-        app:srcCompat="@drawable/history_green" />
 
     <TextView
         android:id="@+id/pickout_tv"

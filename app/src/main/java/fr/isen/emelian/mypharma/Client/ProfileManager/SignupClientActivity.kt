@@ -76,7 +76,7 @@ class SignupClientActivity : AppCompatActivity() {
 
                     sendEmailVerification()
 
-                    fillRealTimeDatabase(firstname.text.toString(), lastname.text.toString(), dateOfBirth.text.toString(), phoneNumber.text.toString(), email.text.toString(), mdp.text.toString(), secu.text.toString(),"","", "","","")
+                    fillRealTimeDatabase(firstname.text.toString(), lastname.text.toString(), dateOfBirth.text.toString(), phoneNumber.text.toString(), email.text.toString(), mdp.text.toString(), secu.text.toString(),"", "","","")
 
                     startActivity(Intent(this, LoginClientActivity::class.java))
                     Toast.makeText(baseContext, "Authentication worked.",
@@ -92,7 +92,7 @@ class SignupClientActivity : AppCompatActivity() {
             }
     }
 
-    private fun fillRealTimeDatabase(firstName: String, lastName: String, dateOfBirth: String, secu: String, email: String, phone: String, password: String, ordo_one: String, ordo_two: String, latestPharmacy: String, stateRequest: String, urlLatest: String) {
+    private fun fillRealTimeDatabase(firstName: String, lastName: String, dateOfBirth: String, secu: String, email: String, phone: String, password: String, ordo_one: String, latestPharmacy: String, stateRequest: String, urlLatest: String) {
 
 
         val userId = auth.currentUser?.uid.toString()
@@ -106,7 +106,6 @@ class SignupClientActivity : AppCompatActivity() {
             password,
             secu,
             ordo_one,
-            ordo_two,
             latestPharmacy,
             stateRequest,
             urlLatest

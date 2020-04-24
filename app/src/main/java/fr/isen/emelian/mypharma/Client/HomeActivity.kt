@@ -19,7 +19,6 @@ import fr.isen.emelian.mypharma.Chat.LatestChatActivity
 import fr.isen.emelian.mypharma.Client.Maps.MapsActivity
 import fr.isen.emelian.mypharma.Client.PrescriptionManager.SendPrescriptionActivity
 import fr.isen.emelian.mypharma.Client.PrescriptionManager.ViewerInfo
-import fr.isen.emelian.mypharma.Client.PrescriptionManager.ViewerInfoTwo
 import fr.isen.emelian.mypharma.Client.ProfileManager.PartnerPharma
 import fr.isen.emelian.mypharma.Client.ProfileManager.ProfileActivity
 import fr.isen.emelian.mypharma.Client.ProfileManager.valueListenerAdapter
@@ -63,7 +62,6 @@ class HomeActivity : AppCompatActivity() {
             valueListenerAdapter {
                 mUser = it.asUser()!!
                 val state = mUser.stateRequest
-                val test = mUser.ordoUrl_two
                 firstnameTop.text = mUser.firstName
                 lastnameTop.text = mUser.lastName
                 dobTop.text = mUser.date_of_birth
@@ -97,6 +95,14 @@ class HomeActivity : AppCompatActivity() {
                     firstLastPres.setOnClickListener {
                         val intent = Intent(this, ViewerInfo::class.java)
                         startActivity(intent)
+                    }
+
+                    if(queryState_tv.text == "send"){
+                        queryState_tv.setTextColor(resources.getColor(R.color.blue))
+                    }else if(queryState_tv.text == "take in charge"){
+                        queryState_tv.setTextColor(resources.getColor(R.color.yellow))
+                    }else if(queryState_tv.text == "ready"){
+                        queryState_tv.setTextColor(resources.getColor(R.color.green))
                     }
 
                     cancel.setOnClickListener {

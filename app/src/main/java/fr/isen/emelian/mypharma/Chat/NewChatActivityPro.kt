@@ -11,6 +11,9 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import fr.isen.emelian.mypharma.DataClass.User
 import fr.isen.emelian.mypharma.Item.UserItem
+import fr.isen.emelian.mypharma.Pro.HomeProActivity
+import fr.isen.emelian.mypharma.Pro.PrescriptionManager.ListRequest
+import fr.isen.emelian.mypharma.Pro.ProfileManager.ProfilePharmacy
 import fr.isen.emelian.mypharma.R
 import kotlinx.android.synthetic.main.activity_new_chat_pro.*
 
@@ -23,6 +26,21 @@ class NewChatActivityPro : AppCompatActivity() {
         supportActionBar?.title = "Select User"
 
         fetchUsers()
+
+        newPro_chat_chat.setOnClickListener{
+            val intent = Intent(this, ListRequest::class.java)
+            startActivity(intent)
+        }
+
+        home_pro_chat_chat.setOnClickListener{
+            val intent = Intent(this, HomeProActivity::class.java)
+            startActivity(intent)
+        }
+
+        pharma_info_chat_chat.setOnClickListener{
+            val intent = Intent(this, ProfilePharmacy::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun fetchUsers() {

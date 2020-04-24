@@ -15,8 +15,7 @@ data class User(
     val phone: String = "",
     val pictureUrl: String = "",
     val ordoUrl_one: String = "",
-    val ordoUrl_two: String = "",
-    val latestPharmacy: String = "",
-    val stateRequest: String = "",
+    var latestPharmacy: String = "",
+    var stateRequest: String = "",
     val urlLatest: String = ""
 ): Parcelable

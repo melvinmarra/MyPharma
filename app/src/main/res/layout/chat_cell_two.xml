@@ -15,6 +15,7 @@
         android:maxWidth="200dp"
         android:padding="16dp"
         android:text="@string/message"
+        android:inputType="textShortMessage|textLongMessage|textAutoCorrect"
         app:layout_constraintEnd_toStartOf="@+id/profileChat_two"
         app:layout_constraintTop_toTopOf="@+id/profileChat_two" />
 

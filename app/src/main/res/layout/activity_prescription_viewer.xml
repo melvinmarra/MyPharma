@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6E6E6E"
+    tools:context=".Pro.PrescriptionManager.PrescriptionViewer">
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#6E6E6E"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <ImageView
+            android:id="@+id/home_pro_viewer"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/home" />
+
+        <ImageView
+            android:id="@+id/newPro_viewer"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/new_folder_blue" />
+
+        <ImageView
+            android:id="@+id/chat_viewer"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/chat" />
+
+        <ImageView
+            android:id="@+id/pharma_info_viewer"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/pharmacy_profile" />
+    </LinearLayout>
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/picture_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.237"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/camera" />
+
+    <TextView
+        android:id="@+id/firstname_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/firstName"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/picture_view"
+        app:layout_constraintStart_toEndOf="@+id/picture_view"
+        app:layout_constraintTop_toTopOf="@+id/picture_view"
+        app:layout_constraintVertical_bias="0.367" />
+
+    <TextView
+        android:id="@+id/lastname_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lastName"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/firstname_view"
+        app:layout_constraintTop_toBottomOf="@+id/firstname_view" />
+
+    <Button
+        android:id="@+id/clientSheet"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="60dp"
+        android:background="#4446F9"
+        android:text="@string/sheet"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/picture_view" />
+
+    <ImageView
+        android:id="@+id/prescription_view"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clientSheet"
+        app:srcCompat="@drawable/camera" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

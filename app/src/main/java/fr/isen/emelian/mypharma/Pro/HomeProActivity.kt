@@ -15,6 +15,7 @@ import fr.isen.emelian.mypharma.Chat.LatestChatActivityPro
 import fr.isen.emelian.mypharma.Client.ProfileManager.valueListenerAdapter
 import fr.isen.emelian.mypharma.DataClass.Pharmacy
 import fr.isen.emelian.mypharma.MainActivity
+import fr.isen.emelian.mypharma.Pro.PrescriptionManager.ListRequest
 import fr.isen.emelian.mypharma.Pro.ProfileManager.ProfilePharmacy
 import fr.isen.emelian.mypharma.R
 import kotlinx.android.synthetic.main.activity_home_pro.*
@@ -33,9 +34,12 @@ class HomeProActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_pro)
 
+        supportActionBar?.title = "Welcome on MyPharma Professional"
+
         mAuth = FirebaseAuth.getInstance()
         mDatabase = FirebaseDatabase.getInstance().reference
         mStorage = FirebaseStorage.getInstance()
+
 
         sharedPreferences = getSharedPreferences(USER_PREFS, Context.MODE_PRIVATE)
 
@@ -78,6 +82,11 @@ class HomeProActivity : AppCompatActivity() {
 
         chat_home_pro.setOnClickListener{
             val intent = Intent(this, LatestChatActivityPro::class.java)
+            startActivity(intent)
+        }
+
+        newPro.setOnClickListener{
+            val intent = Intent(this, ListRequest::class.java)
             startActivity(intent)
         }
 

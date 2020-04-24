@@ -30,6 +30,7 @@ import fr.isen.emelian.mypharma.DataClass.Pharmacy
 import fr.isen.emelian.mypharma.DataClass.User
 import fr.isen.emelian.mypharma.R
 import kotlinx.android.synthetic.main.activity_choose_picture_prescription.*
+import java.util.*
 
 class ChoosePicturePrescription : AppCompatActivity() {
 
@@ -54,6 +55,7 @@ class ChoosePicturePrescription : AppCompatActivity() {
         val intent = Intent(this, SendOption::class.java)
         val builder = androidx.appcompat.app.AlertDialog.Builder(this)
         val refresh = Intent(this, ChoosePicturePrescription::class.java)
+        //val filename = UUID.randomUUID().toString()
 
         fun currentUserReference() =
             mDatabase.child("DataUsers").child(mAuth.currentUser!!.uid)
@@ -62,6 +64,8 @@ class ChoosePicturePrescription : AppCompatActivity() {
                 mUser = it.asUser()!!
                 val test = mUser.ordoUrl_one
                 val state = mUser.stateRequest
+
+               //mUser.latestPharmacy = SendOption.currentPharmacy!!.name
 
 
                 if (test != "" && state == "send") {
@@ -90,6 +94,9 @@ class ChoosePicturePrescription : AppCompatActivity() {
                     nextStep_txt.visibility = View.VISIBLE
                     nextStep_arrow.visibility = View.VISIBLE
 
+
+                }else{
+
                 }
 
                 buttonURL.setOnClickListener {
@@ -108,19 +115,29 @@ class ChoosePicturePrescription : AppCompatActivity() {
         }
 
         validordo_one.setOnClickListener {
+            val uid = FirebaseAuth.getInstance().uid ?: ""
+            mDatabase.child("DataUsers").child(uid).child("stateRequest")
+                .setValue("")
+            if(mUser.latestPharmacy == "") {
+                val latest = mDatabase.child("DataUsers").child(uid).child("latestPharmacy")
+                    .setValue(topharma?.name.toString())
+            }else if(mUser.latestPharmacy != "" && mUser.latestPharmacy != topharma?.name && topharma?.name != ""){
+                val latest = mDatabase.child("DataUsers").child(uid).child("latestPharmacy")
+                    .setValue(topharma?.name.toString())
+            }
+
             uploadImageToFirestore()
         }
 
-
         clearordo_one.setOnClickListener{
             val uid = FirebaseAuth.getInstance().uid ?: ""
+            deletefromFirestore()
             mDatabase.child("DataUsers").child(uid).child("ordoUrl_one")
                 .setValue("")
             mDatabase.child("DataUsers").child(uid).child("stateRequest")
                 .setValue("")
             startActivity(refresh)
             Toast.makeText(this, "You can now load a new one", Toast.LENGTH_SHORT).show()
-
         }
 
 
@@ -177,21 +194,22 @@ class ChoosePicturePrescription : AppCompatActivity() {
 
     fun uploadImageToFirestore() {
 
-        val pharmaMelvin = "pharmacie de melvin".toLowerCase()
-        val pharmaLilian = "lilian pharmacy".toLowerCase()
-        val pharmaEmma = "pharmacy emma".toLowerCase()
-        val pharmaEmelian = "emelian pharma".toLowerCase()
-        val pharmaPraden = "praden pharmacy".toLowerCase()
-        val pharmaQuissac = "pharmacie de quissac".toLowerCase()
+        val pharmaMelvin = "pharmacie de melvin"
+        val pharmaLilian = "lilian pharmacy"
+        val pharmaEmma = "pharmacy emma"
+        val pharmaEmelian = "emelian pharma"
+        val pharmaPraden = "praden pharmacy"
+        val pharmaQuissac = "pharmacie de quissac"
 
         val folderName = mUser.id
         val filename = mUser.firstName
+
 
         if (selectedPhotoUri == null) {
             return
         }
 
-        if ((topharma?.name) == pharmaLilian){
+        if ((topharma?.name) == pharmaLilian || mUser.latestPharmacy == pharmaLilian){
             val ref = FirebaseStorage.getInstance().getReference("/pharma_lilian/").child("$folderName/$filename")
             ref.putFile(selectedPhotoUri!!)
                 .addOnSuccessListener {
@@ -204,7 +222,7 @@ class ChoosePicturePrescription : AppCompatActivity() {
                 .addOnFailureListener {
                 }
 
-        }else if ((topharma?.name) == pharmaEmma){
+        }else if ((topharma?.name) == pharmaEmma || mUser.latestPharmacy == pharmaEmma){
             val ref = FirebaseStorage.getInstance().getReference("/pharma_emma/").child("$folderName/$filename")
             ref.putFile(selectedPhotoUri!!)
                 .addOnSuccessListener {
@@ -217,7 +235,7 @@ class ChoosePicturePrescription : AppCompatActivity() {
                 .addOnFailureListener {
                 }
 
-        }else if ((topharma?.name) == pharmaMelvin){
+        }else if ((topharma?.name) == pharmaMelvin || mUser.latestPharmacy == pharmaMelvin){
             val ref = FirebaseStorage.getInstance().getReference("/pharma_melvin/").child("$folderName/$filename")
             ref.putFile(selectedPhotoUri!!)
                 .addOnSuccessListener {
@@ -230,7 +248,7 @@ class ChoosePicturePrescription : AppCompatActivity() {
                 .addOnFailureListener {
                 }
 
-        }else if ((topharma?.name) == pharmaPraden){
+        }else if ((topharma?.name) == pharmaPraden || mUser.latestPharmacy == pharmaMelvin){
             val ref = FirebaseStorage.getInstance().getReference("/pharma_praden/").child("$folderName/$filename")
             ref.putFile(selectedPhotoUri!!)
                 .addOnSuccessListener {
@@ -243,7 +261,7 @@ class ChoosePicturePrescription : AppCompatActivity() {
                 .addOnFailureListener {
                 }
 
-        }else if ((topharma?.name) == pharmaQuissac){
+        }else if ((topharma?.name) == pharmaQuissac || mUser.latestPharmacy == pharmaQuissac){
             val ref = FirebaseStorage.getInstance().getReference("/pharma_quissac/").child("$folderName/$filename")
             ref.putFile(selectedPhotoUri!!)
                 .addOnSuccessListener {
@@ -256,7 +274,7 @@ class ChoosePicturePrescription : AppCompatActivity() {
                 .addOnFailureListener {
                 }
 
-        }else if ((topharma?.name) == pharmaEmelian) {
+        }else if ((topharma?.name) == pharmaEmelian || mUser.latestPharmacy == pharmaEmelian) {
             val ref = FirebaseStorage.getInstance().getReference("/pharma_emelian/").child("$folderName/$filename")
             ref.putFile(selectedPhotoUri!!)
                 .addOnSuccessListener {
@@ -272,15 +290,73 @@ class ChoosePicturePrescription : AppCompatActivity() {
     }
 
 
+    fun deletefromFirestore() {
+
+        val pharmaMelvin = "pharmacie de melvin"
+        val pharmaLilian = "lilian pharmacy"
+        val pharmaEmma = "pharmacy emma"
+        val pharmaEmelian = "emelian pharma"
+        val pharmaPraden = "praden pharmacy"
+        val pharmaQuissac = "pharmacie de quissac"
+
+        if ((topharma?.name) == pharmaLilian || mUser.latestPharmacy == pharmaLilian){
+            val ref = FirebaseStorage.getInstance().getReference("/pharma_lilian/${mUser.id}/").child("/${mUser.firstName}")
+            ref.delete()
+                .addOnSuccessListener {
+                }
+                .addOnFailureListener {
+                }
+
+        }
+        else if ((topharma?.name) == pharmaEmma || mUser.latestPharmacy == pharmaEmma){
+            val ref = FirebaseStorage.getInstance().getReference("/pharma_emma/${mUser.id}/").child("/${mUser.firstName}")
+            ref.delete()
+                .addOnSuccessListener {
+                }
+                .addOnFailureListener {
+                }
+
+        }else if ((topharma?.name) == pharmaMelvin|| mUser.latestPharmacy == pharmaMelvin){
+            val ref = FirebaseStorage.getInstance().getReference("/pharma_melvin/${mUser.id}/").child("/${mUser.firstName}")
+            ref.delete()
+                .addOnSuccessListener {
+                }
+                .addOnFailureListener {
+                }
+
+        }else if ((topharma?.name) == pharmaPraden|| mUser.latestPharmacy == pharmaPraden){
+            val ref = FirebaseStorage.getInstance().getReference("/pharma_praden/${mUser.id}/").child("/${mUser.firstName}")
+            ref.delete()
+                .addOnSuccessListener {
+                }
+                .addOnFailureListener {
+                }
+
+        }else if ((topharma?.name) == pharmaQuissac|| mUser.latestPharmacy == pharmaQuissac){
+            val ref = FirebaseStorage.getInstance().getReference("/pharma_quissac/${mUser.id}/").child("/${mUser.firstName}")
+            ref.delete()
+                .addOnSuccessListener {
+                }
+                .addOnFailureListener {
+                }
+
+        }else if ((topharma?.name) == pharmaEmelian|| mUser.latestPharmacy == pharmaEmelian) {
+            val ref = FirebaseStorage.getInstance().getReference("/pharma_emelian/${mUser.id}/").child("/${mUser.firstName}")
+            ref.delete()
+                .addOnSuccessListener {
+                }
+                .addOnFailureListener {
+                }
+        }
+    }
+
+
     private fun saveUserToDatabase(picture_link: String ) {
 
         val uid = FirebaseAuth.getInstance().uid ?: ""
         val ref = mDatabase.child("DataUsers").child(uid).child("ordoUrl_one")
                 .setValue(picture_link)
-        val latest = mDatabase.child("DataUsers").child(uid).child("latestPharmacy")
-                .setValue(topharma?.name.toString())
-        val latesturl = mDatabase.child("DataUsers").child(uid).child("urlLatest")
-            .setValue(topharma?.profileImageUrl.toString())
+
         val refresh = Intent(this, ChoosePicturePrescription::class.java)
         startActivity(refresh)
     }
@@ -339,9 +415,6 @@ class ChoosePicturePrescription : AppCompatActivity() {
                                     val urlOne =
                                         mDatabase.child("DataUsers").child(uid).child("ordoUrl_one")
                                             .setValue("")
-                                    val urlTwo =
-                                        mDatabase.child("DataUsers").child(uid).child("ordoUrl_two")
-                                            .setValue("")
                                     startActivity(intent)
                                 }
                                 setNegativeButton("No") { dialog, _ ->
@@ -356,9 +429,6 @@ class ChoosePicturePrescription : AppCompatActivity() {
                                 setPositiveButton("Yes") { _, _ ->
                                     val urlOne =
                                         mDatabase.child("DataUsers").child(uid).child("ordoUrl_one")
-                                            .setValue("")
-                                    val urlTwo =
-                                        mDatabase.child("DataUsers").child(uid).child("ordoUrl_two")
                                             .setValue("")
                                     val stateP = mDatabase.child("DataUsers").child(uid)
                                         .child("stateRequest")

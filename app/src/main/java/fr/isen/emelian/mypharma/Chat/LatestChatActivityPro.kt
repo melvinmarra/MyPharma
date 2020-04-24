@@ -13,6 +13,9 @@ import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import fr.isen.emelian.mypharma.DataClass.Pharmacy
 import fr.isen.emelian.mypharma.DataClass.User
+import fr.isen.emelian.mypharma.Pro.HomeProActivity
+import fr.isen.emelian.mypharma.Pro.PrescriptionManager.ListRequest
+import fr.isen.emelian.mypharma.Pro.ProfileManager.ProfilePharmacy
 import fr.isen.emelian.mypharma.R
 import kotlinx.android.synthetic.main.activity_latest_chat_pro.*
 import kotlinx.android.synthetic.main.latest_message_cell.view.*
@@ -40,6 +43,21 @@ class LatestChatActivityPro : AppCompatActivity() {
             val intent = Intent(this, ChatAdapterPro::class.java)
             val cell = item as LatestMessageCell
             intent.putExtra(NewChatActivityPro.USER_KEY, cell.chatPartnerUser)
+            startActivity(intent)
+        }
+
+        newPro_chat.setOnClickListener{
+            val intent = Intent(this, ListRequest::class.java)
+            startActivity(intent)
+        }
+
+        home_pro_chat.setOnClickListener{
+            val intent = Intent(this, HomeProActivity::class.java)
+            startActivity(intent)
+        }
+
+        pharma_info_chat.setOnClickListener{
+            val intent = Intent(this, ProfilePharmacy::class.java)
             startActivity(intent)
         }
 
