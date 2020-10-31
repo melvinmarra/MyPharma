@@ -17,5 +17,8 @@ data class Pharmacy(
     val employee_two: String = "",
     val employee_three: String = "",
     val currentUser: String = "",
-    val profileImageUrl: String = ""
+    val profileImageUrl: String = "",
+    val box_one: String = "",
+    val box_two: String = "",
+    val box_three: String = ""
 ): Parcelable

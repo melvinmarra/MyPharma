@@ -5,11 +5,15 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <uses-feature
         android:name="android.hardware.nfc.hce"
@@ -22,82 +26,105 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Pro.PrescriptionManager.InChargeActivity"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Pro.PrescriptionManager.ViewerInfoPro"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Pro.PrescriptionManager.ClientSheet"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Pro.PrescriptionManager.PrescriptionViewer"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Pro.PrescriptionManager.ListRequest"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Client.ProfileManager.PartnerPharma"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Client.PrescriptionManager.ViewerInfo"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Client.PrescriptionManager.OverviewActivity"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Chat.NewChatActivityPro"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Chat.LatestChatActivityPro"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Chat.ChatAdapterPro"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Chat.LatestChatActivity"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Chat.ChatAdapter"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Chat.NewChatActivity"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Client.PrescriptionManager.ChoosePicturePrescription"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Client.PrescriptionManager.SendOption"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Pro.ProfileManager.VerificationIdentityPro"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Pro.ProfileManager.ProfilePharmacy"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Pro.HomeProActivity"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Pro.ProfileManager.LoginProActivity"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Client.PrescriptionManager.SendPrescriptionActivity"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Client.ProfileManager.PhotoChooseActivity"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".NFC.NFCActivity"
+        <activity android:name=".Client.ProfileManager.CardView"></activity>
+        <activity android:name=".Client.PrescriptionManager.PhoneVerificationActivity" />
+        <activity android:name=".nfcHce.NFCMainActivity" />
+        <activity
+            android:name=".Pro.PrescriptionManager.InChargeActivity"
             tools:ignore="InnerclassSeparator" />
-        <!--
-             The API key for Google Maps-based APIs is defined as a string resource.
-             (See the file "res/values/google_maps_api.xml").
-             Note that the API key is linked to the encryption key used to sign the APK.
-             You need a different API key for each encryption key, including the release key that is used to
-             sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/.
-        -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
-
+        <activity
+            android:name=".Pro.PrescriptionManager.ViewerInfoPro"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Pro.PrescriptionManager.ClientSheet"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Pro.PrescriptionManager.PrescriptionViewer"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Pro.PrescriptionManager.ListRequest"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Client.ProfileManager.PartnerPharma"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Client.PrescriptionManager.ViewerInfo"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Client.PrescriptionManager.OverviewActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Chat.NewChatActivityPro"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Chat.LatestChatActivityPro"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Chat.ChatAdapterPro"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Chat.LatestChatActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Chat.ChatAdapter"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Chat.NewChatActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Client.PrescriptionManager.ChoosePicturePrescription"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Client.PrescriptionManager.SendOption"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Pro.ProfileManager.VerificationIdentityPro"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Pro.ProfileManager.ProfilePharmacy"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Pro.HomeProActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Pro.ProfileManager.LoginProActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Client.PrescriptionManager.SendPrescriptionActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Client.ProfileManager.PhotoChooseActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".NFC.NFCActivity"
+            tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Client.Maps.MapsActivity"
             android:label="@string/title_activity_maps"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Client.ProfileManager.valueListenerAdapter"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Client.Maps.ViewPlace"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Client.ProfileManager.ProfileActivity"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Client.HomeActivity"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".DataClass.User"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Client.ProfileManager.SignupClientActivity"
-            tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Client.ProfileManager.LoginClientActivity"
-            tools:ignore="InnerclassSeparator"/>
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Client.ProfileManager.valueListenerAdapter"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Client.Maps.ViewPlace"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Client.ProfileManager.ProfileActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Client.HomeActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".DataClass.User"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Client.ProfileManager.SignupClientActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".ble.ControlActivity" />
+        <activity
+            android:name=".Client.ProfileManager.LoginClientActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".ble.SelectDeviceActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -106,11 +133,14 @@
             </intent-filter>
         </activity>
 
-        <service
-            android:name=".NFC.HostCardEmulatorService"
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+    <service
+            android:name="nfcHce.MyHostApduService"
             android:exported="true"
-            android:permission="android.permission.BIND_NFC_SERVICE"
-            tools:ignore="InnerclassSeparator">
+            android:permission="android.permission.BIND_NFC_SERVICE" >
             <intent-filter>
                 <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE" />
             </intent-filter>
@@ -119,6 +149,22 @@
                 android:name="android.nfc.cardemulation.host_apdu_service"
                 android:resource="@xml/apduservice" />
         </service>
+
+        <!--
+        <service
+            android:name=".NFC.HCEService"
+            android:exported="true"
+            android:permission="android.permission.BIND_NFC_SERVICE">
+            <intent-filter>
+                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.nfc.cardemulation.host_apdu_service"
+                android:resource="@xml/apduservice" />
+        </service>
+
+        -->
     </application>
 
 </manifest>

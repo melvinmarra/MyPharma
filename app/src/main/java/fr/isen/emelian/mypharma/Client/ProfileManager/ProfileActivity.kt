@@ -238,6 +238,11 @@ class ProfileActivity : AppCompatActivity() {
             intent.type = "image/*"
             startActivityForResult(intent, 0)
         }
+
+        buttonCarte.setOnClickListener {
+            val intent = Intent(this, CardView::class.java)
+            startActivity(intent)
+        }
     }
 
 

@@ -15,6 +15,7 @@ import fr.isen.emelian.mypharma.DataClass.User
 import fr.isen.emelian.mypharma.Pro.HomeProActivity
 import fr.isen.emelian.mypharma.Pro.ProfileManager.ProfilePharmacy
 import fr.isen.emelian.mypharma.R
+import fr.isen.emelian.mypharma.ble.SelectDeviceActivity
 import kotlinx.android.synthetic.main.activity_in_charge.*
 
 class InChargeActivity : AppCompatActivity() {
@@ -78,6 +79,7 @@ class InChargeActivity : AppCompatActivity() {
         when(item?.itemId){
             R.id.finishButton -> {
                 val builder = androidx.appcompat.app.AlertDialog.Builder(this)
+                val intent = Intent(this, InChargeActivity::class.java)
                 with(builder) {
                     setTitle("Preparation ended?")
                     setMessage("After this confirmation, the patient will receive a notification to pickout its request/" +
@@ -86,12 +88,7 @@ class InChargeActivity : AppCompatActivity() {
                         user?.id?.let {
                             mDatabase.child("DataUsers").child(it).child("stateRequest")
                                 .setValue("ready")
-
-
-
-
-
-
+                                    startActivity(intent)
                         }
                     }
                     setNegativeButton("No") { dialog, _ ->
@@ -99,6 +96,11 @@ class InChargeActivity : AppCompatActivity() {
                     }
                     show()
                 }
+            }
+
+            R.id.openWithBle -> {
+                val intent = Intent(this, SelectDeviceActivity::class.java)
+                startActivity(intent)
             }
         }
         return super.onOptionsItemSelected(item)

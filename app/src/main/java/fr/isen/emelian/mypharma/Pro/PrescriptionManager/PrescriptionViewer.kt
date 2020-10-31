@@ -78,6 +78,7 @@ class PrescriptionViewer : AppCompatActivity() {
         when(item?.itemId){
             R.id.treatButton -> {
                 val builder = androidx.appcompat.app.AlertDialog.Builder(this)
+                val intent = Intent(this, ListRequest::class.java)
                 with(builder) {
                     setTitle("Treat this pharmacy?")
                     setMessage("You will not be able to cancel after this confirmation")
@@ -85,6 +86,7 @@ class PrescriptionViewer : AppCompatActivity() {
                         user?.id?.let {
                             mDatabase.child("DataUsers").child(it).child("stateRequest")
                                 .setValue("take in charge")
+                                startActivity(intent)
                         }
                     }
                     setNegativeButton("No") { dialog, _ ->

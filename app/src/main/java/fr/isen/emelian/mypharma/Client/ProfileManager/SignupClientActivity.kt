@@ -173,3 +173,16 @@ class SignupClientActivity : AppCompatActivity() {
     }
     
 }
+
+
+
+
+/*Complémentaire (mutuelle) OBLIGATOIRE
+Origanisme de rattachement sociale / Caisse
+rattachement sociale = mieux
+
+(médecin traitant)
+
+
+photo carte id + identité + complémentaire
+*/

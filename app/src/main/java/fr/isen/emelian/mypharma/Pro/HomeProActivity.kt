@@ -1,5 +1,6 @@
 package fr.isen.emelian.mypharma.Pro
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -30,6 +31,7 @@ class HomeProActivity : AppCompatActivity() {
     lateinit var sharedPreferences: SharedPreferences
     private val USER_PREFS = "user_prefs"
 
+    @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_pro)
@@ -53,7 +55,16 @@ class HomeProActivity : AppCompatActivity() {
                 mPharma = it.asUser()!!
                 current_user_tv.text = mPharma.currentUser
                 place_name_current.text = mPharma.name
+                textView5.text = mPharma.box_two
+
+                if(textView5.text == "fill"){
+                    textView5.setTextColor(R.color.red)
+                }else if(textView5.text == "empty"){
+                    textView5.setTextColor(R.color.green)
+                }
+
             })
+
 
         logout_iv_pro.setOnClickListener{
             Toast.makeText(applicationContext, "Déconnexion réussi !", Toast.LENGTH_SHORT).show()
@@ -94,5 +105,6 @@ class HomeProActivity : AppCompatActivity() {
 
     fun DataSnapshot.asUser(): Pharmacy? =
         key?.let { getValue(Pharmacy::class.java)?.copy(id = it) }
+
 
 }

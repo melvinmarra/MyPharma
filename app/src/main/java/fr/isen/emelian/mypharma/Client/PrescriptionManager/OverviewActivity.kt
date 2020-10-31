@@ -17,7 +17,6 @@ import fr.isen.emelian.mypharma.Client.HomeActivity
 import fr.isen.emelian.mypharma.Client.Maps.MapsActivity
 import fr.isen.emelian.mypharma.Client.ProfileManager.ProfileActivity
 import fr.isen.emelian.mypharma.Client.ProfileManager.valueListenerAdapter
-import fr.isen.emelian.mypharma.DataClass.Pharmacy
 import fr.isen.emelian.mypharma.DataClass.User
 
 import fr.isen.emelian.mypharma.R
@@ -59,7 +58,7 @@ class OverviewActivity : AppCompatActivity() {
             valueListenerAdapter {
                 mUser = it.asUser()!!
 
-                val builder = androidx.appcompat.app.AlertDialog.Builder(this)
+                //val builder = androidx.appcompat.app.AlertDialog.Builder(this)
 
                 Picasso.get()
                     .load(mUser.ordoUrl_one)
@@ -100,13 +99,16 @@ class OverviewActivity : AppCompatActivity() {
         when(item?.itemId){
             R.id.send_prescription -> {
 
-                val uid = FirebaseAuth.getInstance().uid ?: ""
+               val uid = FirebaseAuth.getInstance().uid ?: ""
                 val ref = mDatabase.child("DataUsers").child(uid).child("stateRequest")
                     .setValue("send")
                 Toast.makeText(applicationContext, "Prescription(s) successfully send to the pharmacy", Toast.LENGTH_LONG)
                     .show()
                 val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
+
+                //val intent = Intent(this, PhoneVerificationActivity::class.java)
+                //startActivity(intent)
 
             }
         }
@@ -118,4 +120,3 @@ class OverviewActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 }
-

@@ -56,4 +56,9 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
     implementation 'com.github.d-max:spots-dialog:0.7@aar'
     implementation 'com.xwray:groupie:2.1.0'
+    implementation 'com.google.firebase:firebase-messaging:20.1.6'
+    implementation 'com.squareup.okhttp3:okhttp:3.4.1'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.thoughtbot:expandablerecyclerview:1.3'
 }

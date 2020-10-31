@@ -146,8 +146,8 @@ class HomeActivity : AppCompatActivity() {
         }
 
         profile_menu_home.setOnClickListener{
-         val intent = Intent(this, ProfileActivity::class.java)
-         startActivity(intent)
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
         }
 
         location_menu_home.setOnClickListener{
@@ -191,3 +191,11 @@ class HomeActivity : AppCompatActivity() {
     fun DataSnapshot.asUser(): User? =
         key?.let { getValue(User::class.java)?.copy(id = it) }
 }
+
+/* if(queryState_tv.text == "send"){
+                       queryState_tv.setTextColor(resources.getColor(R.color.blue))
+                   }else if(queryState_tv.text == "take in charge"){
+                       queryState_tv.setTextColor(resources.getColor(R.color.yellow))
+                   }else if(queryState_tv.text == "ready"){
+                       queryState_tv.setTextColor(resources.getColor(R.color.green))
+                   }*/

@@ -121,9 +121,13 @@ class ChoosePicturePrescription : AppCompatActivity() {
             if(mUser.latestPharmacy == "") {
                 val latest = mDatabase.child("DataUsers").child(uid).child("latestPharmacy")
                     .setValue(topharma?.name.toString())
+                val latestUrl = mDatabase.child("DataUsers").child(uid).child("urlLatest")
+                    .setValue(topharma?.profileImageUrl.toString())
             }else if(mUser.latestPharmacy != "" && mUser.latestPharmacy != topharma?.name && topharma?.name != ""){
                 val latest = mDatabase.child("DataUsers").child(uid).child("latestPharmacy")
                     .setValue(topharma?.name.toString())
+                val latestUrl = mDatabase.child("DataUsers").child(uid).child("urlLatest")
+                    .setValue(topharma?.profileImageUrl.toString())
             }
 
             uploadImageToFirestore()

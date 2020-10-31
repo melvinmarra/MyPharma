@@ -7,4 +7,9 @@
         android:title="@string/ready"
         app:showAsAction="ifRoom"/>
 
+    <item
+        android:id="@+id/openWithBle"
+        android:title="@string/openBox"
+        app:showAsAction="ifRoom"/>
+
 </menu>
