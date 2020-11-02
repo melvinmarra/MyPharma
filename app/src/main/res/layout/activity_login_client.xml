@@ -10,14 +10,15 @@
 
     <Button
         android:id="@+id/signupButton"
-        android:layout_width="71dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="60dp"
-        android:background="#414141"
+        android:layout_width="160dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/btn_round"
         android:text="@string/buttonSignup"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/buttonForgot"
+        app:layout_constraintHorizontal_bias="0.581"
         app:layout_constraintStart_toStartOf="@+id/buttonForgot"
         app:layout_constraintTop_toBottomOf="@+id/buttonForgot"
         tools:ignore="SmallSp" />
@@ -68,15 +69,16 @@
 
     <Button
         android:id="@+id/validateButtonLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        android:layout_height="26dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="8dp"
-        android:background="#2C6138"
+        android:background="@drawable/btn_round"
         android:text="@string/confirmButton"
 
         android:textColor="#FCFFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/passwordLogin"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/passwordLogin"
         app:layout_constraintTop_toBottomOf="@+id/passwordLogin" />
 
@@ -93,16 +95,18 @@
         app:layout_constraintStart_toStartOf="@+id/signupButton"
         app:layout_constraintTop_toBottomOf="@+id/signupButton" />
 
-    <Button
+    <TextView
         android:id="@+id/buttonForgot"
-        android:layout_width="99dp"
-        android:layout_height="26dp"
+        android:layout_width="117dp"
+        android:layout_height="16dp"
         android:layout_marginTop="8dp"
-        android:background="#414141"
+        android:background="#00800000"
         android:text="@string/mdpForgot"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/validateButtonLogin"
+        app:layout_constraintHorizontal_bias="0.62"
         app:layout_constraintStart_toStartOf="@+id/validateButtonLogin"
         app:layout_constraintTop_toBottomOf="@+id/validateButtonLogin" />
 
