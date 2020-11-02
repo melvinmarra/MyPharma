@@ -8,30 +8,30 @@
     android:background="#6E6E6E"
     tools:context=".Pro.ProfileManager.LoginProActivity">
 
+
     <com.mikhaellopez.circularimageview.CircularImageView
         android:id="@+id/imageViewPro"
         android:layout_width="103dp"
         android:layout_height="103dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="32dp"
         app:civ_border_width="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/my_pharma_pro" />
 
-
     <Button
         android:id="@+id/validateButtonLoginPro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        android:layout_height="30dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="88dp"
         android:layout_marginEnd="8dp"
-        android:background="#133993"
+        android:background="@drawable/btn_round"
         android:text="@string/confirmButton"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordLoginPro" />
 
@@ -47,7 +47,7 @@
         android:textColorHint="#FFFFFF"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailLoginPro" />
 
