@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EF8C8C"
+    android:background="#82C46C"
     tools:context=".MainActivity">
 
     <TextView
@@ -13,40 +14,28 @@
         android:layout_height="wrap_content"
         android:text="@string/WelcomeMessage"
         android:textColor="#FFFFFF"
+        android:textStyle="bold"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.092" />
-
-    <TextView
-        android:id="@+id/choiceText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="@string/choiceMessage"
-        android:textColor="#FCFFFFFF"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="match_parent"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_below="@id/welcomeText"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/bg_round_corner"
+        >
 
         <com.mikhaellopez.circularimageview.CircularImageView
             android:id="@+id/myPharma_client"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_alignParentTop="true"
+            android:layout_marginTop="70dp"
             android:layout_centerHorizontal="true"
             app:civ_border_width="3dp"
             app:srcCompat="@drawable/my_pharma" />
@@ -56,10 +45,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_alignTop="@+id/myPharma_client"
-            android:layout_marginTop="120dp"
+            android:layout_below="@+id/myPharma_client"
+            android:layout_marginTop="10dp"
             android:text="@string/client"
-            android:textColor="#FCFFFFFF"
+            android:textColor="#566573"
             android:textSize="14sp" />
 
         <com.mikhaellopez.circularimageview.CircularImageView
@@ -67,8 +56,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_centerHorizontal="true"
-            android:layout_alignTop="@+id/clientText"
-            android:layout_marginTop="40dp"
+            android:layout_below="@+id/clientText"
+            android:layout_marginTop="50dp"
             app:civ_border_width="3dp"
             app:srcCompat="@drawable/my_pharma_pro" />
 
@@ -78,10 +67,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_alignTop="@+id/myPharma_pro"
-            android:layout_marginTop="120dp"
+            android:layout_below="@+id/myPharma_pro"
+            android:layout_marginTop="10dp"
             android:text="@string/professionnal"
-            android:textColor="@android:color/background_light"
+            android:textColor="#566573"
             android:textSize="15sp" />
 
         <Button
@@ -89,11 +78,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_alignTop="@+id/proText"
+            android:layout_below="@+id/proText"
+            android:background="@drawable/bg_round_corner"
             android:layout_marginTop="50dp"
-            android:text="Simple visiteur"
-            android:textColor="@android:color/background_light"
+            android:text=" Acces Boutique "
+            android:textColor="#566573"
             android:textSize="15sp" />
     </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
