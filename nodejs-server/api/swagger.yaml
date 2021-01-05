@@ -1,0 +1,713 @@
+---
+swagger: "2.0"
+info:
+  description: "This file index all routes necessary for Pharma-collect app. Here\
+    \ is the list of available web-services as well as the parameters necessary for\
+    \ their proper functioning. \n Be careful : \n 1) Query parameters must be sent\
+    \ in JSON format \n 2) You must respect the syntax of the parameters to be sent\
+    \ to the server \n 3) Mandatory parameters will be noted with '*' \n 4) You need\
+    \ to add a header with Key : 'Host' and Value : 'node' \n 5) All routes follow\
+    \ the format : {{URL}}/api/category_name/route_name"
+  version: "1.0.0"
+  title: "Pharma-collect API Swagger file"
+host: "virtserver.swaggerhub.com"
+basePath: "/melvinmarra/swagger/1.0.0"
+tags:
+- name: "user_client"
+  description: "Pharma-collect client routes"
+- name: "user_pro"
+  description: "Pharma-collect pro routes"
+- name: "pharmacy"
+  description: "Pharma-collect pharmacy routes"
+- name: "product"
+  description: "Pharma-collect product routes"
+- name: "container"
+  description: "Pharma-collect locker routes"
+- name: "order"
+  description: "Pharma-collect order routes"
+- name: "order_detail"
+  description: "Pharma-collect order details routes"
+schemes:
+- "https"
+paths:
+  /getAllUserClient:
+    get:
+      tags:
+      - "user_client"
+      summary: ""
+      description: "Retrieve all the customers present in the database"
+      operationId: "getAllUserClientGET"
+      parameters: []
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            $ref: "#/definitions/getAllUser"
+        "404":
+          description: "404 Page not found"
+      x-swagger-router-controller: "UserClient"
+  /getUserClientById:
+    get:
+      tags:
+      - "user_client"
+      summary: ""
+      description: "Retrieve a customer based on its ID \n \nCalls corresponding to\
+        \ this function are secured. To access a user's information you must be that\
+        \ user and you will have to send your identification token in the Header :\
+        \ \n Key : \"Authorization\",  Value : \"<your_token>\""
+      operationId: "getUserClientByIdGET"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Id to search"
+        required: true
+        schema:
+          $ref: "#/definitions/getUserById"
+      responses:
+        "200":
+          description: "Success"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/Unauthorized"
+        "404":
+          description: "404 Page not found \n Can appear because of missing parameter\
+            \ or internal server"
+      x-swagger-router-controller: "UserClient"
+  /getUserClientByUsername:
+    get:
+      tags:
+      - "user_client"
+      summary: ""
+      description: "Retrieve a customer based on its username"
+      operationId: "getUserClientByUsernameGET"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Username to search"
+        required: true
+        schema:
+          $ref: "#/definitions/getUserByName"
+      responses:
+        "200":
+          description: "Success"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/Unauthorized"
+        "404":
+          description: "404 Page not found \n Can appear because of missing parameter\
+            \ or internal server"
+      x-swagger-router-controller: "UserClient"
+  /deleteUserClient:
+    post:
+      tags:
+      - "user_client"
+      summary: ""
+      description: "Delete a customer according to its ID"
+      operationId: "deleteUserClientPOST"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Id to search"
+        required: true
+        schema:
+          $ref: "#/definitions/getUserById"
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            $ref: "#/definitions/Success"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/Unauthorized"
+        "404":
+          description: "404 Page not found \n Can appear because of missing parameter\
+            \ or internal server"
+      x-swagger-router-controller: "UserClient"
+  /registerClient:
+    post:
+      tags:
+      - "user_client"
+      summary: ""
+      description: "Create a new client \n Password must be hash in Bcrypt with a\
+        \ salt of 10"
+      operationId: "registerClientPOST"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Parameters to add to the request"
+        required: true
+        schema:
+          $ref: "#/definitions/UserCreation"
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            $ref: "#/definitions/getAllUser"
+        "404":
+          description: "404 Page not found \n Can appear because of missing parameter\
+            \ or internal server"
+      x-swagger-router-controller: "UserClient"
+  /loginClient:
+    post:
+      tags:
+      - "user_client"
+      summary: ""
+      description: "Login to an account"
+      operationId: "loginClientPOST"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Parameters to add to the request"
+        required: true
+        schema:
+          $ref: "#/definitions/Login"
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            $ref: "#/definitions/LoginSuccess"
+        "201":
+          description: "When empty field \n Often 200 error"
+          schema:
+            $ref: "#/definitions/LoginEmpty"
+        "202":
+          description: "When incorrect username or password \n Often 200 error"
+          schema:
+            $ref: "#/definitions/LoginIncorrect"
+        "404":
+          description: "404 Page not found"
+      x-swagger-router-controller: "UserClient"
+  /getAllUserPro:
+    get:
+      tags:
+      - "user_pro"
+      summary: ""
+      description: "Retrieve all the professional present in the database"
+      operationId: "getAllUserProGET"
+      parameters: []
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            $ref: "#/definitions/getAllUserPro"
+        "404":
+          description: "404 Page not found"
+      x-swagger-router-controller: "UserPro"
+  /getUserProByPharmacy:
+    get:
+      tags:
+      - "user_pro"
+      summary: ""
+      description: "Retrieve a customer based on its pharmacy"
+      operationId: "getUserProByPharmacyGET"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Pharmacy id to search"
+        required: true
+        schema:
+          $ref: "#/definitions/getUserProByPharmacy"
+      responses:
+        "200":
+          description: "Success"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/Unauthorized"
+        "404":
+          description: "404 Page not found \n Can appear because of missing parameter\
+            \ or internal server"
+      x-swagger-router-controller: "UserPro"
+  /getUserProById:
+    get:
+      tags:
+      - "user_pro"
+      summary: ""
+      description: "Retrieve a professionnal based on its ID \n \nCalls corresponding\
+        \ to this function are secured. To access a user's information you must be\
+        \ that user and you will have to send your identification token in the Header\
+        \ : \n Key : \"Authorization\",  Value : \"<your_token>\""
+      operationId: "getUserProByIdGET"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Id to search"
+        required: true
+        schema:
+          $ref: "#/definitions/getUserById"
+      responses:
+        "200":
+          description: "Success"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/Unauthorized"
+        "404":
+          description: "404 Page not found \n Can appear because of missing parameter\
+            \ or internal server"
+      x-swagger-router-controller: "UserPro"
+  /deleteUserPro:
+    post:
+      tags:
+      - "user_pro"
+      summary: ""
+      description: "Delete a professional according to its ID"
+      operationId: "deleteUserProPOST"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Id to search"
+        required: true
+        schema:
+          $ref: "#/definitions/getUserById"
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            $ref: "#/definitions/Success"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/Unauthorized"
+        "404":
+          description: "404 Page not found \n Can appear because of missing parameter\
+            \ or internal server"
+      x-swagger-router-controller: "UserPro"
+  /registerPro:
+    post:
+      tags:
+      - "user_pro"
+      summary: ""
+      description: "Create a professional according to its name and pharmacy id"
+      operationId: "registerProPOST"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Parameters of the request"
+        required: true
+        schema:
+          $ref: "#/definitions/ProCreation"
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            $ref: "#/definitions/ProCreationSuccess"
+        "401":
+          description: "Unauthorized"
+          schema:
+            $ref: "#/definitions/Unauthorized"
+        "404":
+          description: "404 Page not found \n Can appear because of missing parameter\
+            \ or internal server"
+      x-swagger-router-controller: "UserPro"
+  /loginPro:
+    post:
+      tags:
+      - "user_pro"
+      summary: ""
+      description: "Login to a professionnal account"
+      operationId: "loginProPOST"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Parameters to add to the request"
+        required: true
+        schema:
+          $ref: "#/definitions/Login"
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            $ref: "#/definitions/LoginPro"
+        "201":
+          description: "When empty field \n Often 200 error"
+          schema:
+            $ref: "#/definitions/LoginEmpty"
+        "202":
+          description: "When incorrect username or password \n Often 200 error"
+          schema:
+            $ref: "#/definitions/LoginIncorrect"
+        "404":
+          description: "404 Page not found"
+      x-swagger-router-controller: "UserPro"
+definitions:
+  getAllUser:
+    type: "object"
+    properties:
+      success:
+        type: "boolean"
+      result:
+        type: "array"
+        xml:
+          name: "tag"
+          wrapped: true
+        items:
+          $ref: "#/definitions/User"
+    example:
+      result:
+      - mail: "lilian.giraudo@swagger.fr"
+        phone: "0601020304"
+        image_url: "null"
+        name: "lilian"
+        birth: "12-12-1994"
+        id: 0
+        username: "lilian.giraudo"
+        lastname: "giraudo"
+      - mail: "lilian.giraudo@swagger.fr"
+        phone: "0601020304"
+        image_url: "null"
+        name: "lilian"
+        birth: "12-12-1994"
+        id: 0
+        username: "lilian.giraudo"
+        lastname: "giraudo"
+      success: true
+  getAllUserPro:
+    type: "object"
+    properties:
+      success:
+        type: "boolean"
+      result:
+        type: "array"
+        xml:
+          name: "tag"
+          wrapped: true
+        items:
+          $ref: "#/definitions/UserPro"
+    example:
+      result:
+      - is_admin: 1
+        pharmacy_id: 6
+        id: 0
+        username: "melvin.marra"
+      - is_admin: 1
+        pharmacy_id: 6
+        id: 0
+        username: "melvin.marra"
+      success: true
+  getUserById:
+    type: "object"
+    properties:
+      user_id:
+        type: "string"
+  getUserByName:
+    type: "object"
+    properties:
+      username:
+        type: "string"
+  getUserProByPharmacy:
+    type: "object"
+    properties:
+      pharmacy_id:
+        type: "integer"
+  UserPro:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+        enum:
+        - 3
+      username:
+        type: "string"
+        enum:
+        - "melvin.marra"
+      pharmacy_id:
+        type: "integer"
+        format: "int64"
+        enum:
+        - 1
+      is_admin:
+        type: "integer"
+        format: "int64"
+        enum:
+        - 0
+    example:
+      is_admin: 1
+      pharmacy_id: 6
+      id: 0
+      username: "melvin.marra"
+  User:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+        enum:
+        - 13
+      username:
+        type: "string"
+        enum:
+        - "lilian.giraudo"
+      name:
+        type: "string"
+        enum:
+        - "lilian"
+      lastname:
+        type: "string"
+        enum:
+        - "giraudo"
+      mail:
+        type: "string"
+        enum:
+        - "lilian.giraudo@swagger.fr"
+      phone:
+        type: "string"
+        enum:
+        - "0601020304"
+      birth:
+        type: "string"
+        enum:
+        - "12-12-1994"
+      image_url:
+        type: "string"
+        enum:
+        - "null"
+    example:
+      mail: "lilian.giraudo@swagger.fr"
+      phone: "0601020304"
+      image_url: "null"
+      name: "lilian"
+      birth: "12-12-1994"
+      id: 0
+      username: "lilian.giraudo"
+      lastname: "giraudo"
+  UserCreation:
+    type: "object"
+    properties:
+      username:
+        type: "string"
+        enum:
+        - "lilian.giraudo"
+      name:
+        type: "string"
+        enum:
+        - "lilian"
+      lastname:
+        type: "string"
+        enum:
+        - "giraudo"
+      mail:
+        type: "string"
+        enum:
+        - "lilian.giraudo@swagger.fr"
+      phone:
+        type: "string"
+        enum:
+        - "0601020304"
+      birth:
+        type: "string"
+        enum:
+        - "12-12-1994"
+      password:
+        type: "string"
+        enum:
+        - "xxxxxxxxxx"
+  ProCreation:
+    type: "object"
+    properties:
+      username:
+        type: "string"
+        enum:
+        - "melvin.marra"
+      password:
+        type: "string"
+        enum:
+        - "xxxxxxxxxx"
+      pharmacy_id:
+        type: "integer"
+  ProCreationSuccess:
+    type: "object"
+    properties:
+      succes:
+        type: "boolean"
+      result:
+        $ref: "#/definitions/ProCreationSuccess_result"
+    example:
+      result:
+        is_admin: 1
+        pharmacy_id: 6
+        id: 0
+        username: "melvin.marra"
+      succes: true
+  LoginPro:
+    type: "object"
+    properties:
+      succes:
+        type: "boolean"
+      result:
+        $ref: "#/definitions/LoginPro_result"
+    example:
+      result:
+        pharmacy_id: 6
+        id: 0
+        username: "melvin.marra"
+        token: "eyFndeodojdTdfsFRSkfjspkfsjdbflsdnlsfnlsbfpsinflsfbs"
+      succes: true
+  Login:
+    type: "object"
+    properties:
+      username:
+        type: "string"
+        enum:
+        - "lilian.giraudo"
+      password:
+        type: "string"
+        enum:
+        - "xxxxxxxxxx"
+  LoginSuccess:
+    type: "object"
+    properties:
+      succes:
+        type: "boolean"
+      result:
+        $ref: "#/definitions/LoginSuccess_result"
+    example:
+      result:
+        mail: "lilian.giraudo@swagger.fr"
+        phone: "0601020304"
+        image_url: "null"
+        name: "lilian"
+        birth: "12-12-1994"
+        id: 0
+        username: "lilian.giraudo"
+        lastname: "giraudo"
+        token: "eyFndeodojdTdfsFRSkfjspkfsjdbflsdnlsfnlsbfpsinflsfbs"
+      succes: true
+  LoginEmpty:
+    type: "object"
+    properties:
+      succes:
+        type: "boolean"
+      error:
+        type: "string"
+        enum:
+        - "Veuillez remplir tous les champs"
+  LoginIncorrect:
+    type: "object"
+    properties:
+      succes:
+        type: "boolean"
+      error:
+        type: "string"
+        enum:
+        - "Identifiant incorrect"
+  Unauthorized:
+    type: "object"
+    properties:
+      succes:
+        type: "boolean"
+      error:
+        type: "string"
+        enum:
+        - "Authentification échouée"
+  Success:
+    type: "object"
+    properties:
+      succes:
+        type: "boolean"
+      result:
+        type: "integer"
+        format: "int64"
+        enum:
+        - 1
+    example:
+      result: 0
+      succes: true
+  ProCreationSuccess_result:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+        enum:
+        - 7
+      username:
+        type: "string"
+        enum:
+        - "melvin.marra"
+      pharmacy_id:
+        type: "integer"
+      is_admin:
+        type: "integer"
+    example:
+      is_admin: 1
+      pharmacy_id: 6
+      id: 0
+      username: "melvin.marra"
+  LoginPro_result:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+        enum:
+        - 7
+      username:
+        type: "string"
+        enum:
+        - "melvin.marra"
+      pharmacy_id:
+        type: "integer"
+      token:
+        type: "string"
+        enum:
+        - "eyFndeodojdTdfsFRSkfjspkfsjdbflsdnlsfnlsbfpsinflsfbs"
+    example:
+      pharmacy_id: 6
+      id: 0
+      username: "melvin.marra"
+      token: "eyFndeodojdTdfsFRSkfjspkfsjdbflsdnlsfnlsbfpsinflsfbs"
+  LoginSuccess_result:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+        enum:
+        - 13
+      username:
+        type: "string"
+        enum:
+        - "lilian.giraudo"
+      name:
+        type: "string"
+        enum:
+        - "lilian"
+      lastname:
+        type: "string"
+        enum:
+        - "giraudo"
+      mail:
+        type: "string"
+        enum:
+        - "lilian.giraudo@swagger.fr"
+      phone:
+        type: "string"
+        enum:
+        - "0601020304"
+      birth:
+        type: "string"
+        enum:
+        - "12-12-1994"
+      image_url:
+        type: "string"
+        enum:
+        - "null"
+      token:
+        type: "string"
+        enum:
+        - "eyFndeodojdTdfsFRSkfjspkfsjdbflsdnlsfnlsbfpsinflsfbs"
+    example:
+      mail: "lilian.giraudo@swagger.fr"
+      phone: "0601020304"
+      image_url: "null"
+      name: "lilian"
+      birth: "12-12-1994"
+      id: 0
+      username: "lilian.giraudo"
+      lastname: "giraudo"
+      token: "eyFndeodojdTdfsFRSkfjspkfsjdbflsdnlsfnlsbfpsinflsfbs"

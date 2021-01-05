@@ -1,0 +1,20 @@
+{
+  "name": "pharma-collect-api-swagger-file",
+  "version": "1.0.0",
+  "description": "This file index all routes necessary for Pharma-collect app. Here is the list of available web-services as well as the parameters necessary for their proper functioning.   Be careful :   1) Query parameters must be sent in JSON format   2) You must respect the syntax of the parameters to be sent to the server   3) Mandatory parameters will be noted with '*'   4) You need to add a header with Key : 'Host' and Value : 'node'   5) All routes follow the format : {{URL}}/api/category_name/route_name",
+  "main": "index.js",
+  "scripts": {
+	"prestart": "npm install",
+	"start": "node index.js"
+  },
+  "keywords": [
+    "swagger"
+  ],
+  "license": "Unlicense",
+  "private": true,
+  "dependencies": {
+    "connect": "^3.2.0",
+    "js-yaml": "^3.3.0",
+    "swagger-tools": "0.10.1"
+  }
+}
